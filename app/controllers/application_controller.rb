@@ -39,13 +39,34 @@ class ApplicationController < ActionController::Base
 
   def movies
     @films = Movie.all
+    @directors = Director.all
 
     render({ :template => "movie_templates/movies.html.erb" })
   end
 
   def movies_details
+    @film_id = params.fetch("id")
     @films = Movie.all
+    @directors = Director.all
+
 
     render({ :template => "movie_templates/movies_details.html.erb" })
+  end
+
+  def actors
+    @actors = Actor.all
+    @movies = Movie.all
+
+    render({ :template => "actors_templates/actors.html.erb" })
+  end
+
+  def actors_details
+    @actor_id = params.fetch("id")
+    @actors = Actor.all
+    @films = Movie.all
+    @characters = Character.all
+
+
+    render({ :template => "actors_templates/actors_details.html.erb" })
   end
 end

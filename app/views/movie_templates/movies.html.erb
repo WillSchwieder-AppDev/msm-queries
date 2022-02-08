@@ -14,11 +14,15 @@
     </th>
 
     <th>
-      Name
+      Title
     </th>
 
     <th>
-      Dob
+      Year
+    </th>
+
+    <th>
+      Director
     </th>
 
     <th>
@@ -39,6 +43,9 @@
         </td>
         <td>
           <%= film.year%>
+        </td>
+        <td>
+           <%= @directors.where({:id => film.director_id}).at(0).name%>
         </td>
         <td>
           <a  href= "/movies/<%= film.id%>">
