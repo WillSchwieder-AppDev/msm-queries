@@ -65,6 +65,7 @@ class ApplicationController < ActionController::Base
     @actors = Actor.all
     @films = Movie.all
     @characters = Character.all
+    @directors = Director.all
 
 
     render({ :template => "actors_templates/actors_details.html.erb" })

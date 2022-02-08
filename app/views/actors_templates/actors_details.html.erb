@@ -85,28 +85,31 @@
     </th>
   </tr>
   
-  <% @characters.where({:actor_id => @actor_id}).each do |actor| %>
+  <% @characters.where({:actor_id => @actor_id}).each do |character| %>
     <tr>
       <td>
+        <%= @films.where({:id => character.movie_id}).at(0).title %>
+      </td>
+
+      <td>
+        <%= @films.where({:id => character.movie_id}).at(0).year %>
+      </td>
+
+      <td>
+
+
+        <%= @directors.where({:id => character.movie_id}).at(0).name%>
+
         
       </td>
 
       <td>
-        1994
+        <%= character.name%>
       </td>
 
-      <td>
-
-
-          Frank Darabont
-      </td>
 
       <td>
-        Andy Dufresne
-      </td>
-
-      <td>
-        <a href="/movies/1">
+        <a href="/movies/<%= @films.where({:id => character.movie_id}).at(0).id %>">
           Show details
         </a>
       </td>
