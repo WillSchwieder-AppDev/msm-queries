@@ -25,23 +25,23 @@
     </th>
   </tr>
 
-    <% @directors.each do |dir| %>
+    <% @films.each do |film| %>
       
       <tr>
         <td>
-          <%= dir.id%>
+          <%= film.id%>
         </td>
         <td>
-          <img src= <%= dir.image %> </img>
+          <img src= <%= film.image %> </img>
         </td>
         <td>
-          <%= dir.name%>
+          <%= film.title%>
         </td>
         <td>
-          <%= dir.dob%>
+          <%= film.year%>
         </td>
         <td>
-          <a  href= "/directors/<%= dir.id %>">
+          <a  href= "/movies/<%= film.id%>">
             Show details
           </a>
         </td>
